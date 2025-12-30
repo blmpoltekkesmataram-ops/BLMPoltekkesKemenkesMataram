@@ -1,3 +1,4 @@
+
 // FIX: Defined data structure interfaces directly in this file to resolve circular import errors.
 export interface VisiMisiData {
     visi: string;
@@ -123,7 +124,7 @@ export const initialData: PageData = {
     logoPhilosophy: {
         blm: {
           title: 'Filosofi Logo BLM',
-          imageUrl: '/BLMPoltekkesMTR/logo.jpg',
+          imageUrl: '/BLMPoltekkesKemenkesMataram/logo.jpg',
           details: [
             'Tiga Bintang: Melambangkan Tri Dharma Perguruan Tinggi (Pendidikan, Penelitian, dan Pengabdian).',
             'Padi dan Kapas: Simbol kesejahteraan dan keadilan sosial bagi seluruh mahasiswa.',

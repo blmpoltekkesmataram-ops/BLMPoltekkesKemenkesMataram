@@ -1,14 +1,16 @@
+
 import React, { useState, useRef, useEffect } from 'react';
 import SectionWrapper from './SectionWrapper';
 import { useData } from '../contexts/DataContext';
 import { fileToBase64 } from '../utils/fileUtils';
+import { LogoPhilosophyData } from '../data/initialData';
 
 interface LogoPhilosophyProps {
   isEditMode: boolean;
   showToast: (message: string) => void;
 }
 
-const initialPhilosophyData = {
+const initialPhilosophyData: LogoPhilosophyData = {
   blm: { title: '', imageUrl: '', details: [] },
   kabinet: { title: '', imageUrl: '', details: [] },
 };
@@ -34,7 +36,7 @@ const FlipCard: React.FC<{
     };
   
   return (
-    <div className="relative group [perspective:1000px] w-full max-w-sm mx-auto h-96">
+    <div className="relative group [perspective:1000px] w-full max-sm mx-auto h-96">
       <input type="file" accept="image/*" ref={imageInputRef} onChange={onImageChange} className="hidden" />
       <div className={`relative w-full h-full [transform-style:preserve-3d] transition-transform duration-700 ease-in-out ${!isEditMode && 'group-hover:[transform:rotateY(180deg)]'}`}>
         {/* Front Side */}
@@ -92,7 +94,7 @@ const FlipCard: React.FC<{
 
 const LogoPhilosophy: React.FC<LogoPhilosophyProps> = ({ isEditMode, showToast }) => {
   const { data, updateLogoPhilosophy } = useData();
-  const [philosophyData, setPhilosophyData] = useState(initialPhilosophyData);
+  const [philosophyData, setPhilosophyData] = useState<LogoPhilosophyData>(initialPhilosophyData);
   const [tempBlmTitle, setTempBlmTitle] = useState('');
   const [tempKabinetTitle, setTempKabinetTitle] = useState('');
   const [tempBlmDetails, setTempBlmDetails] = useState('');
@@ -112,7 +114,7 @@ const LogoPhilosophy: React.FC<LogoPhilosophyProps> = ({ isEditMode, showToast }
   const handleSaveChanges = async () => {
     setIsSaving(true);
     try {
-        const newData = {
+        const newData: LogoPhilosophyData = {
             blm: { 
                 ...philosophyData.blm, 
                 title: tempBlmTitle,
@@ -140,7 +142,7 @@ const LogoPhilosophy: React.FC<LogoPhilosophyProps> = ({ isEditMode, showToast }
       setIsSaving(true);
       try {
         const base64 = await fileToBase64(file);
-        const newData = {
+        const newData: LogoPhilosophyData = {
           ...philosophyData,
           [type]: { ...philosophyData[type], imageUrl: base64 }
         };
