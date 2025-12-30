@@ -1,9 +1,10 @@
+
 {
   "name": "blm-poltekkes-mataram",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://blmpoltekkesmataram-ops.github.io/BLMPoltekkesMTR/",
+  "homepage": "https://blmpoltekkesmataram-ops.github.io/BLMPoltekkesKemenkesMataram/",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

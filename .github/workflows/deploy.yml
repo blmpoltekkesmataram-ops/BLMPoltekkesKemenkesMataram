@@ -1,3 +1,4 @@
+
 # Alur kerja sederhana untuk membangun dan menerbitkan ke GitHub Pages
 name: Deploy GitHub Pages
 
@@ -31,7 +32,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: 'npm'
+          # Cache dihapus karena package-lock.json tidak tersedia di repo
       - name: Install dependencies
         run: npm install
       - name: Build
