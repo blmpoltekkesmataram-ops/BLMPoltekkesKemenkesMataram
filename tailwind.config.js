@@ -1,8 +1,10 @@
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
     "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
@@ -39,9 +41,6 @@ export default {
       animation: {
         'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
         'fade-in-down': 'fadeInDown 0.5s ease-out forwards',
-      },
-      perspective: {
-        '1000': '1000px',
       },
     },
   },
